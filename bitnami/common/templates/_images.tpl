@@ -50,7 +50,7 @@ Return the proper Docker Image Registry Secret Names (deprecated: use common.ima
 
   {{- if (not (empty $pullSecrets)) }}
 imagePullSecrets:
-    {{- range $pullSecrets | uniq }}
+    {{- range $pullSecrets }}
   - name: {{ . }}
     {{- end }}
   {{- end }}
@@ -78,7 +78,7 @@ Return the proper Docker Image Registry Secret Names evaluating values as templa
 
   {{- if (not (empty $pullSecrets)) }}
 imagePullSecrets:
-    {{- range $pullSecrets | uniq }}
+    {{- range $pullSecrets }}
   - name: {{ . }}
     {{- end }}
   {{- end }}
